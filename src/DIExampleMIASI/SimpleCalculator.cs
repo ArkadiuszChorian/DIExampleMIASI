@@ -7,16 +7,16 @@ namespace DIExampleMIASI
 {
     public class SimpleCalculator
     {
-        private readonly List<IMathOperation> _mathOperations;
+        //private readonly List<IMathOperation> _mathOperations;
 
-        public SimpleCalculator(List<IMathOperation> mathOperations)
-        {
-            _mathOperations = mathOperations;
-        }
+        public IEnumerable<IMathOperation> MathOperations { get; set; }
 
-        public decimal Compute(decimal number1, decimal number2)
+
+        public decimal Compute(decimal number1, decimal number2, string operationSign)
         {
-            return _mathOperation.Compute(number1, number2);
+            var currentMathOperation = MathOperations.Single(mathOperation => mathOperation.OperationSign() == operationSign);
+
+            return currentMathOperation.Compute(number1, number2);
         }
     }
 }

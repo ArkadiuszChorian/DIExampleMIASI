@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace DIExampleMIASI
 {
-    public class AddOperation : IMathOperation
+    public class SubstractOperation : IMathOperation
     {
         public decimal Compute(decimal number1, decimal number2)
         {
-            return number1 + number2;
+            return number1 - number2;
         }
 
-        public string OperationSign() => "+";
+        public string OperationSign() => "-";
     }
 }
